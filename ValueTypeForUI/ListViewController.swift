@@ -29,7 +29,7 @@ class ListViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        let fullScreenLayout = FullScreenLayout(content: tableView)
+        var fullScreenLayout = FullScreenLayout(content: tableView)
         fullScreenLayout.layoutIn(view.bounds)
     }
 }

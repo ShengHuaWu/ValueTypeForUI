@@ -12,6 +12,9 @@
 		9BABE9471D702CD00031719A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BABE9451D702CD00031719A /* LaunchScreen.storyboard */; };
 		9BABE95D1D7035260031719A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BABE95C1D7035260031719A /* ListViewController.swift */; };
 		9BABE95F1D70388C0031719A /* FullScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BABE95E1D70388C0031719A /* FullScreenLayout.swift */; };
+		9BABE9621D703A190031719A /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BABE9611D703A190031719A /* Layout.swift */; };
+		9BABE9641D703AC20031719A /* FullScreenLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BABE9631D703AC20031719A /* FullScreenLayoutTests.swift */; };
+		9BABE9661D703B5E0031719A /* MockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BABE9651D703B5E0031719A /* MockView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,9 @@
 		9BABE9531D702CD00031719A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BABE95C1D7035260031719A /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		9BABE95E1D70388C0031719A /* FullScreenLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FullScreenLayout.swift; path = Layouts/FullScreenLayout.swift; sourceTree = "<group>"; };
+		9BABE9611D703A190031719A /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Layout.swift; path = Layouts/Layout.swift; sourceTree = "<group>"; };
+		9BABE9631D703AC20031719A /* FullScreenLayoutTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenLayoutTests.swift; sourceTree = "<group>"; };
+		9BABE9651D703B5E0031719A /* MockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				9BABE9531D702CD00031719A /* Info.plist */,
+				9BABE9631D703AC20031719A /* FullScreenLayoutTests.swift */,
+				9BABE9651D703B5E0031719A /* MockView.swift */,
 			);
 			path = ValueTypeForUITests;
 			sourceTree = "<group>";
@@ -97,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				9BABE95E1D70388C0031719A /* FullScreenLayout.swift */,
+				9BABE9611D703A190031719A /* Layout.swift */,
 			);
 			name = Layouts;
 			sourceTree = "<group>";
@@ -202,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BABE95F1D70388C0031719A /* FullScreenLayout.swift in Sources */,
+				9BABE9621D703A190031719A /* Layout.swift in Sources */,
 				9BABE95D1D7035260031719A /* ListViewController.swift in Sources */,
 				9BABE93D1D702CD00031719A /* AppDelegate.swift in Sources */,
 			);
@@ -211,6 +221,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BABE9661D703B5E0031719A /* MockView.swift in Sources */,
+				9BABE9641D703AC20031719A /* FullScreenLayoutTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,10 +357,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ValueTypeForUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shenghuawu.ValueTypeForUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ValueTypeForUI.app/ValueTypeForUI";
 			};
 			name = Debug;
@@ -357,6 +371,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ValueTypeForUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shenghuawu.ValueTypeForUITests;

@@ -1,5 +1,5 @@
 //
-//  FullScreenLayout.swift
+//  MockView.swift
 //  ValueTypeForUI
 //
 //  Created by ShengHua Wu on 8/26/16.
@@ -7,11 +7,12 @@
 //
 
 import UIKit
+@testable import ValueTypeForUI
 
-struct FullScreenLayout {
-    var content: Layout
+class MockView: Layout {
+    var frame: CGRect
     
-    mutating func layoutIn(rect: CGRect) {
-        content.frame = rect
+    init() {
+        frame = .zero
     }
 }
