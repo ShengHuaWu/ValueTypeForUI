@@ -11,6 +11,7 @@
 		9BABE9441D702CD00031719A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BABE9431D702CD00031719A /* Assets.xcassets */; };
 		9BABE9471D702CD00031719A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BABE9451D702CD00031719A /* LaunchScreen.storyboard */; };
 		9BABE95D1D7035260031719A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BABE95C1D7035260031719A /* ListViewController.swift */; };
+		9BABE95F1D70388C0031719A /* FullScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BABE95E1D70388C0031719A /* FullScreenLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,7 @@
 		9BABE94D1D702CD00031719A /* ValueTypeForUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ValueTypeForUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BABE9531D702CD00031719A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BABE95C1D7035260031719A /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		9BABE95E1D70388C0031719A /* FullScreenLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FullScreenLayout.swift; path = Layouts/FullScreenLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				9BABE9451D702CD00031719A /* LaunchScreen.storyboard */,
 				9BABE9481D702CD00031719A /* Info.plist */,
 				9BABE95C1D7035260031719A /* ListViewController.swift */,
+				9BABE9601D7039060031719A /* Layouts */,
 			);
 			path = ValueTypeForUI;
 			sourceTree = "<group>";
@@ -88,6 +91,14 @@
 				9BABE9531D702CD00031719A /* Info.plist */,
 			);
 			path = ValueTypeForUITests;
+			sourceTree = "<group>";
+		};
+		9BABE9601D7039060031719A /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				9BABE95E1D70388C0031719A /* FullScreenLayout.swift */,
+			);
+			name = Layouts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BABE95F1D70388C0031719A /* FullScreenLayout.swift in Sources */,
 				9BABE95D1D7035260031719A /* ListViewController.swift in Sources */,
 				9BABE93D1D702CD00031719A /* AppDelegate.swift in Sources */,
 			);
