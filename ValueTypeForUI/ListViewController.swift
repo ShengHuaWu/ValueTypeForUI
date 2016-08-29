@@ -12,7 +12,7 @@ class ListViewController: UIViewController {
     // MARK: - Lazy Initializations
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .Plain)
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.description())
+        tableView.registerClass(DecoratingCell.self, forCellReuseIdentifier: DecoratingCell.description())
         tableView.dataSource = self
         return tableView
     }()
@@ -40,8 +40,9 @@ extension ListViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(UITableViewCell.description(), forIndexPath: indexPath)
-        cell.textLabel?.text = "This is a cell."
+        guard let cell = tableView.dequeueReusableCellWithIdentifier(DecoratingCell.description(), forIndexPath: indexPath) as? DecoratingCell else {
+            fatalError("Cell type is wrong")
+        }
         
         return cell
     }

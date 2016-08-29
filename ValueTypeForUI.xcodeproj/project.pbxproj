@@ -15,6 +15,8 @@
 		9BABE9621D703A190031719A /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BABE9611D703A190031719A /* Layout.swift */; };
 		9BABE9641D703AC20031719A /* FullScreenLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BABE9631D703AC20031719A /* FullScreenLayoutTests.swift */; };
 		9BABE9661D703B5E0031719A /* MockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BABE9651D703B5E0031719A /* MockView.swift */; };
+		9BEA14FE1D741048006EA588 /* DecoratingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEA14FD1D741048006EA588 /* DecoratingLayout.swift */; };
+		9BEA15001D7412FC006EA588 /* DecoratingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEA14FF1D7412FC006EA588 /* DecoratingCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		9BABE9611D703A190031719A /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Layout.swift; path = Layouts/Layout.swift; sourceTree = "<group>"; };
 		9BABE9631D703AC20031719A /* FullScreenLayoutTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenLayoutTests.swift; sourceTree = "<group>"; };
 		9BABE9651D703B5E0031719A /* MockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockView.swift; sourceTree = "<group>"; };
+		9BEA14FD1D741048006EA588 /* DecoratingLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DecoratingLayout.swift; path = Layouts/DecoratingLayout.swift; sourceTree = "<group>"; };
+		9BEA14FF1D7412FC006EA588 /* DecoratingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecoratingCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 				9BABE9451D702CD00031719A /* LaunchScreen.storyboard */,
 				9BABE9481D702CD00031719A /* Info.plist */,
 				9BABE95C1D7035260031719A /* ListViewController.swift */,
+				9BEA14FF1D7412FC006EA588 /* DecoratingCell.swift */,
 				9BABE9601D7039060031719A /* Layouts */,
 			);
 			path = ValueTypeForUI;
@@ -106,6 +111,7 @@
 			children = (
 				9BABE95E1D70388C0031719A /* FullScreenLayout.swift */,
 				9BABE9611D703A190031719A /* Layout.swift */,
+				9BEA14FD1D741048006EA588 /* DecoratingLayout.swift */,
 			);
 			name = Layouts;
 			sourceTree = "<group>";
@@ -213,7 +219,9 @@
 				9BABE95F1D70388C0031719A /* FullScreenLayout.swift in Sources */,
 				9BABE9621D703A190031719A /* Layout.swift in Sources */,
 				9BABE95D1D7035260031719A /* ListViewController.swift in Sources */,
+				9BEA15001D7412FC006EA588 /* DecoratingCell.swift in Sources */,
 				9BABE93D1D702CD00031719A /* AppDelegate.swift in Sources */,
+				9BEA14FE1D741048006EA588 /* DecoratingLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +407,7 @@
 				9BABE9581D702CD00031719A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9BABE9591D702CD00031719A /* Build configuration list for PBXNativeTarget "ValueTypeForUITests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +416,7 @@
 				9BABE95B1D702CD00031719A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
