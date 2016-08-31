@@ -8,19 +8,17 @@
 
 import UIKit
 
-struct DecoratingLayout {
+struct DecoratingLayout: Layout {
     var content: Layout
     var decoration: Layout
+    let spacing: CGFloat
     
     mutating func layoutIn(rect: CGRect) {
-        let edgeInset = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
-        let decorationHeight = rect.height - edgeInset.top - edgeInset.bottom
-        let decorationFrame = CGRect(x: edgeInset.left, y: edgeInset.top, width: decorationHeight, height: decorationHeight)
+        let decorationFrame = CGRect(x: rect.minX, y: rect.minY, width: rect.height, height: rect.height)
         decoration.layoutIn(decorationFrame)
         
-        let interval: CGFloat = 8.0
-        let contentWidth = rect.width - decorationFrame.maxX - interval - edgeInset.right
-        let contentFrame = CGRect(x: decorationFrame.maxX + interval, y: decorationFrame.minY, width: contentWidth, height: decorationFrame.height)        
+        let contentWidth = rect.width - decorationFrame.width - spacing
+        let contentFrame = CGRect(x: decorationFrame.maxX + spacing, y: decorationFrame.minY, width: contentWidth, height: decorationFrame.height)
         content.layoutIn(contentFrame)
     }
 }
