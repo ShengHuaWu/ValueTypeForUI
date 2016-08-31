@@ -12,6 +12,7 @@ class ListViewController: UIViewController {
     // MARK: - Lazy Initializations
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .Plain)
+        tableView.rowHeight = 100.0
         tableView.registerClass(DecoratingCell.self, forCellReuseIdentifier: DecoratingCell.description())
         tableView.dataSource = self
         return tableView

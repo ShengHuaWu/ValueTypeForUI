@@ -16,9 +16,15 @@ class DecoratingCell: UITableViewCell {
         return imageView
     }()
     
-    private(set) lazy var content: UILabel = {
+    private(set) lazy var title: UILabel = {
         let label = UILabel()
         label.backgroundColor = UIColor.blueColor()
+        return label
+    }()
+    
+    private(set) lazy var subtitle: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = UIColor.brownColor()
         return label
     }()
     
@@ -27,7 +33,8 @@ class DecoratingCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.addSubview(decoration)
-        contentView.addSubview(content)
+        contentView.addSubview(title)
+        contentView.addSubview(subtitle)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -38,7 +45,8 @@ class DecoratingCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        var decoratingLayout = DecoratingLayout(content: content, decoration: decoration)
-        decoratingLayout.layoutIn(contentView.bounds)
+        let verticalLayout = VerticalLayout(contents: [title, subtitle])
+        var composedLayout = DecoratingLayout(content: verticalLayout, decoration: decoration)
+        composedLayout.layoutIn(contentView.bounds)
     }
 }

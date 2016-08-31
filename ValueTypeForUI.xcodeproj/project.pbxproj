@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B3AAC841D76BE33008F23B9 /* VerticalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3AAC831D76BE33008F23B9 /* VerticalLayout.swift */; };
+		9B3AAC861D76C390008F23B9 /* VerticalLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3AAC851D76C390008F23B9 /* VerticalLayoutTests.swift */; };
 		9BABE93D1D702CD00031719A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BABE93C1D702CD00031719A /* AppDelegate.swift */; };
 		9BABE9441D702CD00031719A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BABE9431D702CD00031719A /* Assets.xcassets */; };
 		9BABE9471D702CD00031719A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BABE9451D702CD00031719A /* LaunchScreen.storyboard */; };
@@ -31,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B3AAC831D76BE33008F23B9 /* VerticalLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerticalLayout.swift; path = Layouts/VerticalLayout.swift; sourceTree = "<group>"; };
+		9B3AAC851D76C390008F23B9 /* VerticalLayoutTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalLayoutTests.swift; sourceTree = "<group>"; };
 		9BABE9391D702CD00031719A /* ValueTypeForUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ValueTypeForUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BABE93C1D702CD00031719A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BABE9431D702CD00031719A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 				9BABE9631D703AC20031719A /* FullScreenLayoutTests.swift */,
 				9BABE9651D703B5E0031719A /* MockView.swift */,
 				9BEA15011D7415D8006EA588 /* DecoratingLayoutTests.swift */,
+				9B3AAC851D76C390008F23B9 /* VerticalLayoutTests.swift */,
 			);
 			path = ValueTypeForUITests;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 				9BABE95E1D70388C0031719A /* FullScreenLayout.swift */,
 				9BABE9611D703A190031719A /* Layout.swift */,
 				9BEA14FD1D741048006EA588 /* DecoratingLayout.swift */,
+				9B3AAC831D76BE33008F23B9 /* VerticalLayout.swift */,
 			);
 			name = Layouts;
 			sourceTree = "<group>";
@@ -224,6 +230,7 @@
 				9BABE95D1D7035260031719A /* ListViewController.swift in Sources */,
 				9BEA15001D7412FC006EA588 /* DecoratingCell.swift in Sources */,
 				9BABE93D1D702CD00031719A /* AppDelegate.swift in Sources */,
+				9B3AAC841D76BE33008F23B9 /* VerticalLayout.swift in Sources */,
 				9BEA14FE1D741048006EA588 /* DecoratingLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,6 +242,7 @@
 				9BEA15021D7415D8006EA588 /* DecoratingLayoutTests.swift in Sources */,
 				9BABE9661D703B5E0031719A /* MockView.swift in Sources */,
 				9BABE9641D703AC20031719A /* FullScreenLayoutTests.swift in Sources */,
+				9B3AAC861D76C390008F23B9 /* VerticalLayoutTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
