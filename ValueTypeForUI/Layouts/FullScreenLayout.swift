@@ -12,6 +12,6 @@ struct FullScreenLayout {
     var content: Layout
     
     mutating func layoutIn(rect: CGRect) {
-        content.frame = rect
+        content.layoutIn(rect)
     }
 }

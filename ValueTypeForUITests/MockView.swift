@@ -10,9 +10,13 @@ import UIKit
 @testable import ValueTypeForUI
 
 class MockView: Layout {
-    var frame: CGRect
+    private(set) var frame: CGRect
     
     init() {
         frame = .zero
+    }
+    
+    func layoutIn(rect: CGRect) {
+        frame = rect
     }
 }

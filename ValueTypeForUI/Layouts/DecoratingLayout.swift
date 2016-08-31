@@ -15,10 +15,12 @@ struct DecoratingLayout {
     mutating func layoutIn(rect: CGRect) {
         let margin: CGFloat = 8.0
         let decorationHeight = rect.height - margin * 2.0
-        decoration.frame = CGRect(x: margin, y: margin, width: decorationHeight, height: decorationHeight)
+        let decorationFrame = CGRect(x: margin, y: margin, width: decorationHeight, height: decorationHeight)
+        decoration.layoutIn(decorationFrame)
         
         let interval: CGFloat = 8.0
-        let contentWidth = rect.width - decoration.frame.maxX - interval - margin
-        content.frame = CGRect(x: decoration.frame.maxX + interval, y: decoration.frame.minY, width: contentWidth, height: decoration.frame.height)
+        let contentWidth = rect.width - decorationFrame.maxX - interval - margin
+        let contentFrame = CGRect(x: decorationFrame.maxX + interval, y: decorationFrame.minY, width: contentWidth, height: decorationFrame.height)
+        content.layoutIn(contentFrame)
     }
 }

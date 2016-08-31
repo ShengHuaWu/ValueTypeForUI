@@ -9,7 +9,11 @@
 import UIKit
 
 protocol Layout {
-    var frame: CGRect { set get }
+    mutating func layoutIn(rect: CGRect)
 }
 
-extension UIView: Layout {}
+extension UIView: Layout {
+    func layoutIn(rect: CGRect) {
+        frame = rect
+    }
+}
