@@ -3,7 +3,7 @@ Generally speaking, there are three options to build a UI. First, we can choose 
 
 ### Sample UI
 Let's assume that we would like to implement the following UI inside a table view cell.
-<cell-picture>
+![cell](https://github.com/ShengHuaWu/ValueTypeForUI/blob/master/Resources/sample-ui.png)
 We can consider this UI consists of three layouts. First, there is an inset layout which manages the spacing between each edge of the cell. Secondly, we have a decorating layout which divides the layout into a left section and a right section. Finally, there is a vertical layout which aligns the contents of the right section vertically.
 
 ### Implementation
