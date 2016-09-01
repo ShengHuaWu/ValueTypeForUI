@@ -1,5 +1,5 @@
 ## Protocol and Value Type for UI
-Generally speaking, there are three options to build a UI. First, we can choose Auto Layout in Interface Builder. Secondly, we can use Auto Layout in code and maintain references to those constraints. Last, we can implement a layout function with -layoutSubviews. I personally prefer to write layout manually with -layoutSubViews, because using Auto Layout in Interface Builder can end up with inconsistencies in the actual UI vs what Interface Builder creates and using Auto Layout in code can be tedious when we need to be able to change the UI at runtime. However, writing layout manually can still be difficult to read and understand later. In 2016 WWDC, there is a session called protocol and value oriented programming for UIKit apps, and they introduce a higher level abstraction of writing layout manually with protocol and value type. In this article, I will demonstrate how to use those abstractions to implement the layout, and furthermore how to improve the readability of our code with composition.
+Generally speaking, there are three options to build a UI. First, we can choose Auto Layout in Interface Builder. Secondly, we can use Auto Layout in code and maintain references to those constraints. Last, we can implement a layout function with `layoutSubviews`. I personally prefer to write layout manually with `layoutSubViews`, because using Auto Layout in Interface Builder can end up with inconsistencies in the actual UI vs what Interface Builder creates and using Auto Layout in code can be tedious when we need to be able to change the UI at runtime. However, writing layout manually can still be difficult to read and understand later. In 2016 WWDC, there is a session called protocol and value oriented programming for UIKit apps, and they introduce a higher level abstraction of writing layout manually with protocol and value type. In this article, I will demonstrate how to use those abstractions to implement the layout, and furthermore how to improve the readability of our code with composition.
 
 ### Sample UI
 Let's assume that we would like to implement the following UI inside a table view cell.
@@ -45,7 +45,7 @@ struct VerticalLayout: Layout {
     }
 }
 ```
-Finally, we use the composition of those layouts in our custom table view cell's -layoutSubviews method to achieve our UI without the redundant base views.
+Finally, we use the composition of those layouts in our custom table view cell's `layoutSubviews` method to achieve our UI without the redundant base views.
 ```
 class DecoratingCell: UITableViewCell {
     private(set) var decoration: UIImageView
@@ -64,6 +64,7 @@ class DecoratingCell: UITableViewCell {
     }
 }
 ```
+#### Unit Test
 Furthermore, we can take the advantages of protocol and value type in Swift to create a mock view and write a unit test for our UI easily.
 ```
 class MockView: Layout {
