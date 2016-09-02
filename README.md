@@ -101,4 +101,4 @@ class LayoutTests: XCTestCase {
 Here is [the final version of this project in GitHub](https://github.com/ShengHuaWu/ValueTypeForUI).
 
 ### Conclusion
-Value type in Swift isn't only used to represent models, but also can be used to build our UI. As the result, we create a higher level abstraction of layouts, use composition to implement our UI and increase testability and readability in our codebase. I'm totally open to discussion and feedback, so please share your thoughts.
+Value type in Swift isn't only used to represent models, but also can be used to build our UI. As a result, we create a higher level abstraction of layouts, use composition to implement our UI and increase testability and readability in our codebase. I'm totally open to discussion and feedback, so please share your thoughts.
