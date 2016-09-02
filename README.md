@@ -1,6 +1,8 @@
 ## Protocol and Value Type for UI
 Generally speaking, there are three options to build a UI. First, we can choose Auto Layout in Interface Builder. Secondly, we can use Auto Layout in code and maintain references to those constraints. Last, we can implement a layout function with `layoutSubviews`. I personally prefer to write layout manually with `layoutSubViews`, because using Auto Layout in Interface Builder can end up with inconsistencies in the actual UI vs what Interface Builder creates and using Auto Layout in code can be tedious when we need to be able to change the UI at runtime. However, writing layout manually can still be difficult to read and understand later. In 2016 WWDC, there is a session called [protocol and value oriented programming for UIKit apps](https://developer.apple.com/videos/play/wwdc2016/419/), and they introduce a higher level abstraction of writing layout manually with protocol and value type. In this article, I will demonstrate how to use those abstractions to implement the layout, and furthermore how to improve the readability of our code with composition.
 
+Please note that this article adopts Swift 2.2 and Xcode 7.3.
+
 ### Sample UI
 Let's assume that we would like to implement the following UI inside a table view cell.
 ![cell](https://github.com/ShengHuaWu/ValueTypeForUI/blob/master/Resources/sample-ui.png)
