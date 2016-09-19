@@ -11,7 +11,7 @@ import UIKit
 struct FullScreenLayout: Layout {
     var content: Layout
     
-    mutating func layoutIn(rect: CGRect) {
+    mutating func layoutIn(_ rect: CGRect) {
         content.layoutIn(rect)
     }
 }

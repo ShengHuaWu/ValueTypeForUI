@@ -12,10 +12,10 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        let frame = UIScreen.mainScreen().bounds
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        let frame = UIScreen.main.bounds
         window = UIWindow(frame: frame)
-        window?.backgroundColor = UIColor.whiteColor()
+        window?.backgroundColor = UIColor.white
         
         let listViewController = ListViewController()
         let navigationController = UINavigationController(rootViewController: listViewController)

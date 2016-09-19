@@ -10,21 +10,21 @@ import UIKit
 
 class DecoratingCell: UITableViewCell {
     // MARK: - Lazy Initializations
-    private(set) lazy var decoration: UIImageView = {
+    fileprivate(set) lazy var decoration: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = UIColor.yellowColor()
+        imageView.backgroundColor = UIColor.yellow
         return imageView
     }()
     
-    private(set) lazy var title: UILabel = {
+    fileprivate(set) lazy var title: UILabel = {
         let label = UILabel()
-        label.backgroundColor = UIColor.blueColor()
+        label.backgroundColor = UIColor.blue
         return label
     }()
     
-    private(set) lazy var subtitle: UILabel = {
+    fileprivate(set) lazy var subtitle: UILabel = {
         let label = UILabel()
-        label.backgroundColor = UIColor.brownColor()
+        label.backgroundColor = UIColor.brown
         return label
     }()
     

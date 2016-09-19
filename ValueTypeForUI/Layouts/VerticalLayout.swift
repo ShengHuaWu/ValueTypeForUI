@@ -12,7 +12,7 @@ struct VerticalLayout: Layout {
     var contents: [Layout]
     let spacing: CGFloat
     
-    mutating func layoutIn(rect: CGRect) {
+    mutating func layoutIn(_ rect: CGRect) {
         let height = (rect.height - CGFloat(contents.count - 1) * spacing) / CGFloat(contents.count)
         
         for index in contents.indices {

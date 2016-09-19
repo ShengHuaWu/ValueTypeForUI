@@ -10,13 +10,13 @@ import XCTest
 @testable import ValueTypeForUI
 
 class MockView: Layout {
-    private(set) var frame: CGRect
+    fileprivate(set) var frame: CGRect
     
     init() {
         frame = .zero
     }
     
-    func layoutIn(rect: CGRect) {
+    func layoutIn(_ rect: CGRect) {
         frame = rect
     }
 }

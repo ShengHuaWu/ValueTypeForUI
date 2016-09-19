@@ -13,7 +13,7 @@ struct DecoratingLayout: Layout {
     var decoration: Layout
     let spacing: CGFloat
     
-    mutating func layoutIn(rect: CGRect) {
+    mutating func layoutIn(_ rect: CGRect) {
         let decorationFrame = CGRect(x: rect.minX, y: rect.minY, width: rect.height, height: rect.height)
         decoration.layoutIn(decorationFrame)
         

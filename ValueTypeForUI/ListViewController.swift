@@ -10,10 +10,10 @@ import UIKit
 
 class ListViewController: UIViewController {
     // MARK: - Lazy Initializations
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .Plain)
+    fileprivate lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .plain)
         tableView.rowHeight = 100.0
-        tableView.registerClass(DecoratingCell.self, forCellReuseIdentifier: DecoratingCell.description())
+        tableView.register(DecoratingCell.self, forCellReuseIdentifier: DecoratingCell.description())
         tableView.dataSource = self
         return tableView
     }()
@@ -36,12 +36,12 @@ class ListViewController: UIViewController {
 }
 
 extension ListViewController: UITableViewDataSource {
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 20
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCellWithIdentifier(DecoratingCell.description(), forIndexPath: indexPath) as? DecoratingCell else {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: DecoratingCell.description(), for: indexPath) as? DecoratingCell else {
             fatalError("Cell type is wrong")
         }
         
