@@ -13,12 +13,12 @@ struct DecoratingLayout: Layout {
     var decoration: Layout
     let spacing: CGFloat
     
-    mutating func layoutIn(_ rect: CGRect) {
+    mutating func layout(in rect: CGRect) {
         let decorationFrame = CGRect(x: rect.minX, y: rect.minY, width: rect.height, height: rect.height)
-        decoration.layoutIn(decorationFrame)
+        decoration.layout(in: decorationFrame)
         
         let contentWidth = rect.width - decorationFrame.width - spacing
         let contentFrame = CGRect(x: decorationFrame.maxX + spacing, y: decorationFrame.minY, width: contentWidth, height: decorationFrame.height)
-        content.layoutIn(contentFrame)
+        content.layout(in: contentFrame)
     }
 }

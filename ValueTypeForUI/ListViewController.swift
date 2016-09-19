@@ -31,7 +31,7 @@ class ListViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         var fullScreenLayout = FullScreenLayout(content: tableView)
-        fullScreenLayout.layoutIn(view.bounds)
+        fullScreenLayout.layout(in: view.bounds)
     }
 }
 

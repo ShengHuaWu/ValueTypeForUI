@@ -12,9 +12,9 @@ struct InsetLayout: Layout {
     var content: Layout
     let inset: UIEdgeInsets
     
-    mutating func layoutIn(_ rect: CGRect) {
+    mutating func layout(in rect: CGRect) {
         let frame = UIEdgeInsetsInsetRect(rect, inset)
         
-        content.layoutIn(frame)
+        content.layout(in: frame)
     }
 }

@@ -16,7 +16,7 @@ class MockView: Layout {
         frame = .zero
     }
     
-    func layoutIn(_ rect: CGRect) {
+    func layout(in rect: CGRect) {
         frame = rect
     }
 }
@@ -32,7 +32,7 @@ class LayoutTests: XCTestCase {
         let verticalLayout = VerticalLayout(contents: [title, subtitle], spacing: 8.0)
         let decoratingLayout = DecoratingLayout(content: verticalLayout, decoration: decoration, spacing: 8.0)
         var composedLayout = InsetLayout(content: decoratingLayout, inset: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0))
-        composedLayout.layoutIn(rect)
+        composedLayout.layout(in: rect)
         
         XCTAssertEqual(decoration.frame, CGRect(x: 18.0, y: 28.0, width: 34.0, height: 34.0))
         XCTAssertEqual(title.frame, CGRect(x: 60.0, y: 28.0, width: 42.0, height: 13.0))

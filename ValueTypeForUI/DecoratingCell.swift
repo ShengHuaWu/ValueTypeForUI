@@ -48,6 +48,6 @@ class DecoratingCell: UITableViewCell {
         let verticalLayout = VerticalLayout(contents: [title, subtitle], spacing: 8.0)
         let decoratingLayout = DecoratingLayout(content: verticalLayout, decoration: decoration, spacing: 8.0)
         var composedLayout = InsetLayout(content: decoratingLayout, inset: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0))
-        composedLayout.layoutIn(contentView.bounds)
+        composedLayout.layout(in: contentView.bounds)
     }
 }
