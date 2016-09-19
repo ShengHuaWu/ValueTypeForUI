@@ -1,18 +1,18 @@
 ## Protocol and Value Type for UI
 Generally speaking, there are three options to build a UI. First, we can choose Auto Layout in Interface Builder. Secondly, we can use Auto Layout in code and maintain references to those constraints. Last, we can implement a layout function with `layoutSubviews`. I personally prefer to write layout manually with `layoutSubViews`, because using Auto Layout in Interface Builder can end up with inconsistencies in the actual UI vs what Interface Builder creates and using Auto Layout in code can be tedious when we need to be able to change the UI at runtime. However, writing layout manually can still be difficult to read and understand later. In 2016 WWDC, there is a session called [protocol and value oriented programming for UIKit apps](https://developer.apple.com/videos/play/wwdc2016/419/), and they introduce a higher level abstraction of writing layout manually with protocol and value type. In this article, I will demonstrate how to use those abstractions to implement the layout, and furthermore how to improve the readability of our code with composition.
 
-Please note that this article adopts Swift 2.2 and Xcode 7.3.
+Please note that this article adopts Swift 3 and Xcode 8.
 
 ### Sample UI
 Let's assume that we would like to implement the following UI inside a table view cell.
-![cell](https://github.com/ShengHuaWu/ValueTypeForUI/blob/master/Resources/sample-ui.png)
+![cell](https://raw.github.com/ShengHuaWu/ValueTypeForUI/blob/master/Resources/sample-ui.png)
 We can consider this UI consists of three layouts. First, there is an inset layout which manages the spacing between each edge of the cell. Secondly, we have a decorating layout which divides the layout into a left section and a right section. Finally, there is a vertical layout which aligns the contents of the right section vertically.
 
 ### Implementation
 Before implementing those layouts, we should create the Layout protocol at first and write an extension of UIView to conform our Layout protocol.
 ```
 protocol Layout {
-    mutating func layoutIn(rect: CGRect)
+    mutating func layout(in rect: CGRect)
 }
 
 extension UIView: Layout { ... }
@@ -23,7 +23,7 @@ struct InsetLayout: Layout {
     var content: Layout
     let inset: UIEdgeInsets
 
-    mutating func layoutIn(rect: CGRect) {
+    mutating func layout(in rect: CGRect) {
         // Perform layout ...
     }
 }
@@ -33,7 +33,7 @@ struct DecoratingLayout: Layout {
     var decoration: Layout
     let spacing: CGFloat
 
-    mutating func layoutIn(rect: CGRect) {
+    mutating func layout(in rect: CGRect) {
         // Perform layout ...
     }
 }
@@ -42,7 +42,7 @@ struct VerticalLayout: Layout {
     var contents: [Layout]
     let spacing: CGFloat
 
-    mutating func layoutIn(rect: CGRect) {
+    mutating func layout(in rect: CGRect) {
         // Perform layout ...
     }
 }
@@ -62,7 +62,7 @@ class DecoratingCell: UITableViewCell {
         let verticalLayout = VerticalLayout(contents: [title, subtitle], spacing: 8.0)
         let decoratingLayout = DecoratingLayout(content: verticalLayout, decoration: decoration, spacing: 8.0)
         var composedLayout = InsetLayout(content: decoratingLayout, inset: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0))
-        composedLayout.layoutIn(contentView.bounds)
+        composedLayout.layout(in: contentView.bounds)
     }
 }
 ```
@@ -76,7 +76,7 @@ class MockView: Layout {
         frame = .zero
     }
 
-    func layoutIn(rect: CGRect) {
+    func layout(in rect: CGRect) {
         frame = rect
     }
 }
@@ -92,7 +92,7 @@ class LayoutTests: XCTestCase {
         let verticalLayout = VerticalLayout(contents: [title, subtitle], spacing: 8.0)
         let decoratingLayout = DecoratingLayout(content: verticalLayout, decoration: decoration, spacing: 8.0)
         var composedLayout = InsetLayout(content: decoratingLayout, inset: UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0))
-        composedLayout.layoutIn(rect)
+        composedLayout.layout(in: rect)
 
         XCTAssertEqual(decoration.frame, CGRect(x: 18.0, y: 28.0, width: 34.0, height: 34.0))
         XCTAssertEqual(title.frame, CGRect(x: 60.0, y: 28.0, width: 42.0, height: 13.0))
